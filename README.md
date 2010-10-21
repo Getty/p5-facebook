@@ -31,7 +31,7 @@ Facebook - The try for a Facebook SDK in Perl
 
 # DESCRIPTION
 
-__If you are totally new to facebook application development please read [Facebook::Manual](http://search.cpan.org/perldoc?Facebook::Manual)!__
+__If you are new to Facebook application development in Perl please read [Facebook::Manual](http://search.cpan.org/perldoc?Facebook::Manual)!__
 
 This package reflects an instance for your application. Depending on what API of it you use, you require to install the
 needed distributions or provide alternative packages yourself.
@@ -46,7 +46,7 @@ needed distributions or provide alternative packages yourself.
 
 __If you want to use this, you need to install [Facebook::Graph](http://search.cpan.org/perldoc?Facebook::Graph)!__
 
-Returns an instance of the graph_class (by default this is Facebook::Graph)
+Returns an instance of the graph_class (by default this is [Facebook::Graph](http://search.cpan.org/perldoc?Facebook::Graph))
 
 ## $obj->rest
 
@@ -56,7 +56,7 @@ Returns an instance of the graph_class (by default this is Facebook::Graph)
 
 __If you want to use this, you need to install [WWW::Facebook::API](http://search.cpan.org/perldoc?WWW::Facebook::API)!__
 
-Returns an instance of the rest_class (by default this is WWW::Facebook::API)
+Returns an instance of the rest_class (by default this is [WWW::Facebook::API](http://search.cpan.org/perldoc?WWW::Facebook::API))
 
 # LIMITATIONS
 
@@ -80,7 +80,7 @@ Issue Tracker
 
 # AUTHOR
 
-Torsten Raudssus <torsten@raudssus.de> http://www.raudssus.de/
+Torsten Raudssus <torsten@raudssus.de> (http://www.raudssus.de/)
 
 # CONTRIBUTORS
 
