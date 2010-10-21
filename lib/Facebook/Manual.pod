@@ -6,10 +6,6 @@ Facebook::Manual - All you need to know about Facebook and developing applicatio
 
 =head1 DESCRIPTION
 
-This package wraps around the L<Facebook> package. It uses the L</facebook_cookie_class> where it gives over L</app_id>, L</secret>
-and the text of the facebook cookie of this L</app_id>. This object will be used as cookie attribute for the construction of the
-L</facebook_class>. 
-
 =head1 FACEBOOK
 
 =head1 APPLICATIONS
@@ -39,6 +35,16 @@ L<Facebook::Graph>
 =head2 Facebook Chat
 
 =head2 Facebook Ads API
+
+=head1 FACEBOOK AS MODULE
+
+=head2 L<Catalyst>
+
+=head3 L<Catalyst::Model::Facebook>
+
+=head2 L<WebGUI|Task::WebGUI>
+
+=head2 L<Plack>
 
 =head1 MARKETING
 
