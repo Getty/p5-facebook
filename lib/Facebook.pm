@@ -5,7 +5,7 @@ use Carp qw/croak/;
 
 use namespace::autoclean;
 
-our $VERSION = '0.003';
+our $VERSION = '0.004';
 $VERSION = eval $VERSION;
 
 =encoding utf8
@@ -42,7 +42,7 @@ Facebook - The try for a Facebook SDK in Perl
 
 =head1 DESCRIPTION
 
-B<If you are totally new to facebook application development please read L<Facebook::Manual>!>
+B<If you are new to Facebook application development in Perl please read L<Facebook::Manual>!>
 
 This package reflects an instance for your application. Depending on what API of it you use, you require to install the
 needed distributions or provide alternative packages yourself.
@@ -147,7 +147,7 @@ has rest_api => (
 
 B<If you want to use this, you need to install L<Facebook::Graph>!>
 
-Returns an instance of the graph_class (by default this is Facebook::Graph)
+Returns an instance of the graph_class (by default this is L<Facebook::Graph>)
 
 =back
 
@@ -168,7 +168,7 @@ sub graph {
 
 B<If you want to use this, you need to install L<WWW::Facebook::API>!>
 
-Returns an instance of the rest_class (by default this is WWW::Facebook::API)
+Returns an instance of the rest_class (by default this is L<WWW::Facebook::API>)
 
 =back
 
@@ -200,7 +200,7 @@ Issue Tracker
 
 =head1 AUTHOR
 
-Torsten Raudssus <torsten@raudssus.de> http://www.raudssus.de/
+Torsten Raudssus <torsten@raudssus.de> L<http://www.raudssus.de/>
 
 =head1 CONTRIBUTORS
 

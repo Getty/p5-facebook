@@ -6,7 +6,7 @@ Facebook::Cookbook - How to cook your face.....book :)
 
 =head1 DESCRIPTION
 
-The L<Facebook cookbook|Facebook::Cookbook> is a series of recipes showing various L<Facebook> features. Most recipes present some 
+The L<Facebook::Cookbook> is a series of recipes showing various L<Facebook> features. Most recipes present some 
 code demonstrating some feature, and then explain the details of the code.
 
 You should probably read the L<Facebook::Manual> first. The manual explains Facebook concepts without being too code-heavy.
@@ -34,7 +34,7 @@ Issue Tracker
 
 =head1 AUTHOR
 
-Torsten Raudssus <torsten@raudssus.de> http://www.raudssus.de/
+Torsten Raudssus <torsten@raudssus.de> L<http://www.raudssus.de/>
 
 =head1 CONTRIBUTORS
 

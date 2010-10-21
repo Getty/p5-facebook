@@ -125,7 +125,8 @@ has _signed_values => (
 
 =item Return value: HashRef
 
-Checks the signature of the given cookie (as text) with the given application secret and gives back the checked HashRef or an empty one
+Checks the signature of the given cookie (as text) with the given application secret and gives back the checked HashRef or 
+an empty one.
 
 =cut
 
@@ -260,7 +261,7 @@ Issue Tracker
 
 =head1 AUTHOR
 
-Torsten Raudssus <torsten@raudssus.de> http://www.raudssus.de/
+Torsten Raudssus <torsten@raudssus.de> L<http://www.raudssus.de/>
 
 =head1 CONTRIBUTORS
 
