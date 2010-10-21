@@ -6,7 +6,7 @@ Facebook::Manual - All you need to know about Facebook and developing applicatio
 
 =head1 DESCRIPTION
 
-This documentation tends to explain many parts of Facebook L<http://www.facebook.com/> which could be interesting for developers,
+This documentation tends to explain many parts of L<Facebook|http://www.facebook.com/> which could be interesting for developers,
 who wants to try to explore this new possibilities. Facebook itself is a social networking platform, which offers many APIs so
 that you can interact with it not only over the webpage, but also with L</Desktop Applications> or integrated into 
 L</Web Applications>. We try also to explain a bit the possibilities on how you can promote yourself best on Facebook. We try
@@ -25,7 +25,7 @@ the almighty empire, so we have to stick our heads together and be on the edge w
 
 =head2 Mobile Applications
 
-Facebook documentation for Mobile Apps: L<http://developers.facebook.com/docs/guides/mobile/>
+L<Facebook documentation for Mobile Apps|http://developers.facebook.com/docs/guides/mobile/>
 
 =head1 FACEBOOK APIS
 
@@ -54,11 +54,11 @@ to make directly HTTP requests to the L</Graph API>.
 
 =head2 Social Plugins
 
-Facebook documentation about Social Plugins: L<http://developers.facebook.com/plugins>
+L<Facebook documentation about Social Plugins|http://developers.facebook.com/plugins>
 
 =head2 Facebook Query Language (FQL)
 
-Facebook documentation about FQL: L<http://developers.facebook.com/docs/reference/fql/>
+L<Facebook documentation about FQL|http://developers.facebook.com/docs/reference/fql/>
 
 =head3 L<WWW::Facebook::FQL>
 
@@ -70,7 +70,7 @@ L<WWW::Facebook::API::FQL> is part of the L<WWW::Facebook::API> distribution and
 
 =head2 Facebook Markup Language (FBML)
 
-Facebook documentation about FBML: L<http://developers.facebook.com/docs/reference/fbml/>
+L<Facebook documentation about FBML|http://developers.facebook.com/docs/reference/fbml/>
 
 =head3 L<WWW::Facebook::API::FBML>
 
@@ -79,15 +79,15 @@ means, that every call of those methods actually triggers an API request to Face
 
 =head2 Internationalization
 
-Facebook documentation about Internationalization: L<http://developers.facebook.com/docs/internationalization>
+L<Facebook documentation about Internationalization|http://developers.facebook.com/docs/internationalization>
 
 =head2 Facebook Chat
 
-Facebook documentation about Integration with Facebook Chat: L<http://developers.facebook.com/docs/chat>
+L<Facebook documentation about Integration with Facebook Chat|http://developers.facebook.com/docs/chat>
 
 =head2 Facebook Ads API
 
-Facebook documentation about Ads API: L<http://developers.facebook.com/docs/adsapi>
+L<Facebook documentation about Ads API|http://developers.facebook.com/docs/adsapi>
 
 =head1 FACEBOOK AS MODULE
 
@@ -117,9 +117,7 @@ Automatically compose uri_for URIs to be within your Facebook application.
 
 =head2 L<WebGUI|Task::WebGUI>
 
-=head3 facebook-publisher
-
-Webpage on WebGUI Bazaar: L<http://www.webgui.org/bazaar/facebook-publisher>
+=head3 L<facebook-publisher on WebGUI Bazaar|http://www.webgui.org/bazaar/facebook-publisher>
 
 Facebook Publisher is the skeleton of a system to cross publish content from a WebGUI site onto Facebook pages. An example 
 workflow activity is given that publishes a title, link, and synopsis to Facebook every time a new thread is started in a 
