@@ -5,7 +5,7 @@ use Carp qw/croak/;
 
 use namespace::autoclean;
 
-our $VERSION = '0.002';
+our $VERSION = '0.003';
 $VERSION = eval $VERSION;
 
 =encoding utf8
