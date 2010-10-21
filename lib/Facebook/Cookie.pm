@@ -44,12 +44,13 @@ be taken from there.
 =cut
 
 has cookie => (
-	isa => 'Str',
+	isa => 'Maybe[Str]',
 	is => 'ro',
 	lazy => 1,
 	default => sub {
 		my ( $self ) = @_;
-		return join('&',$self->catalyst_request->cookie('fbs_'.$self->app_id)->value);
+		return join('&',$self->catalyst_request->cookie('fbs_'.$self->app_id)->value)
+			if $self->catalyst_request->cookie('fbs_'.$self->app_id);
 	},
 );
 
@@ -131,6 +132,8 @@ Checks the signature of the given cookie (as text) with the given application se
 sub check_payload {
 	my ( $cookie, $app_secret ) = @_;
 
+	return {} if !$cookie;
+	
 	$cookie =~ s/^"|"$//g;
 
 	my $hash;
@@ -264,7 +267,7 @@ Torsten Raudssus <torsten@raudssus.de> http://www.raudssus.de/
 =head1 COPYRIGHT
 
 Copyright (c) 2010 the Facebook L</AUTHOR> and L</CONTRIBUTORS> as
-listed above.
+listed on L<Facebook> and all other packages in this distribution.
 
 =head1 LICENSE
 

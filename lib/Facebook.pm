@@ -5,22 +5,32 @@ use Carp qw/croak/;
 
 use namespace::autoclean;
 
-our $VERSION = '0.001';
+our $VERSION = '0.002';
 $VERSION = eval $VERSION;
 
 =encoding utf8
 
 =head1 NAME
 
-Facebook - The try for a Facebook SDK
+Facebook - The try for a Facebook SDK in Perl
 
 =head1 SYNOPSIS
 
   use Facebook;
 
   my $fb = Facebook->new(
-    app_id => $self->app_id,
-    secret => $self->secret,
+    app_id => $app_id,
+    secret => $secret,
+  );
+
+  use Facebook::Cookie;
+
+  my $fb = Facebook->new(
+    cookie => Facebook::Cookie->new(
+      app_id => $app_id,
+      secret => $secret,
+      cookie => $cookie_as_text,
+    ),
   );
   
   # You need to have Facebook::Graph installed so that this works
@@ -32,9 +42,10 @@ Facebook - The try for a Facebook SDK
 
 =head1 DESCRIPTION
 
-If you want to use ->graph you need to install Facebook::Graph
+B<If you are totally new to facebook application development please read L<Facebook::Manual>!>
 
-If you want to use ->rest you need to install WWW::Facebook::API
+This package reflects an instance for your application. Depending on what API of it you use, you require to install the
+needed distributions or provide alternative packages yourself.
 
 =cut
 
@@ -134,6 +145,8 @@ has rest_api => (
 
 =item Return value: Object
 
+B<If you want to use this, you need to install L<Facebook::Graph>!>
+
 Returns an instance of the graph_class (by default this is Facebook::Graph)
 
 =back
@@ -152,6 +165,8 @@ sub graph {
 =item Arguments: None
 
 =item Return value: Object
+
+B<If you want to use this, you need to install L<WWW::Facebook::API>!>
 
 Returns an instance of the rest_class (by default this is WWW::Facebook::API)
 
@@ -192,7 +207,7 @@ Torsten Raudssus <torsten@raudssus.de> http://www.raudssus.de/
 =head1 COPYRIGHT
 
 Copyright (c) 2010 the Facebook L</AUTHOR> and L</CONTRIBUTORS> as
-listed above.
+listed on L<Facebook> and all other packages in this distribution.
 
 =head1 LICENSE
 

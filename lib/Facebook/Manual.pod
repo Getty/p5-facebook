@@ -1,0 +1,78 @@
+=encoding utf8
+
+=head1 NAME
+
+Facebook::Manual - All you need to know about Facebook and developing applications for it
+
+=head1 DESCRIPTION
+
+This package wraps around the L<Facebook> package. It uses the L</facebook_cookie_class> where it gives over L</app_id>, L</secret>
+and the text of the facebook cookie of this L</app_id>. This object will be used as cookie attribute for the construction of the
+L</facebook_class>. 
+
+=head1 FACEBOOK
+
+=head1 APPLICATIONS
+
+=head2 Web Applications
+
+=head2 Desktop Applications
+
+=head1 FACEBOOK APIS
+
+=head2 Old Rest API
+
+L<WWW::Facebook::API>
+
+=head2 Graph
+
+L<Facebook::Graph>
+
+=head2 Social Plugins
+
+=head2 Facebook Query Language (FQL)
+
+=head2 Facebook Markup Language (FBML)
+
+=head2 Internationalization
+
+=head2 Facebook Chat
+
+=head2 Facebook Ads API
+
+=head1 MARKETING
+
+=head1 SUPPORT
+
+IRC
+
+  Join #facebook on irc.perl.org.
+
+Repository
+
+  http://github.com/Getty/p5-facebook
+  Pull request and additional contributors are welcome
+ 
+Issue Tracker
+
+  http://github.com/Getty/p5-facebook/issues
+
+=head1 AUTHOR
+
+Torsten Raudssus <torsten@raudssus.de> http://www.raudssus.de/
+
+=head1 CONTRIBUTORS
+
+Your name could be here.
+
+=head1 COPYRIGHT
+
+Copyright (c) 2010 the Facebook L</AUTHOR> and L</CONTRIBUTORS> as
+listed on L<Facebook> and all other packages in this distribution.
+
+=head1 LICENSE
+
+This documentation is free software and may be distributed under the same terms
+as perl itself.
+
+=cut
