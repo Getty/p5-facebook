@@ -2,18 +2,22 @@
 
 =head1 NAME
 
-Facebook::Manual - All you need to know about Facebook and developing applications for it
+Facebook::Manual - All you need to know about, and developing applications for, Facebook.
 
 =head1 DESCRIPTION
 
-This documentation tends to explain many parts of L<Facebook|http://www.facebook.com/> which could be interesting for developers,
-who wants to try to explore this new possibilities. Facebook itself is a social networking platform, which offers many APIs so
-that you can interact with it not only over the webpage, but also with L</Desktop Applications> or integrated into 
-L</Web Applications>. We try also to explain a bit the possibilities on how you can promote yourself best on Facebook. We try
-to gather also a bit of knowledge here about the features and possibilities of Facebook, contribution welcome!
+This documentation addresses the elements of L<Facebook|http://www.facebook.com/> for developers who wish to explore it, and 
+describes interesting possibilities for interacting with Facebook.
 
-All distributions and packages about Facebook in Perl are not supported by Facebook itself. Sadly our language is ignored by
-the almighty empire, so we have to stick our heads together and be on the edge with them on our own.
+Facebook is a social networking platform that attempts to offer a comprehensive environment for interaction and media dissemination. 
+Facebook offers APIs (an application interface and development environment) to interact with, these can be via a webpage, with 
+L</Desktop Applications> or integrated into L</Web Applications>. We intend to explain some of the best possibilities on how to 
+promote yourself on, and integrate with, Facebook. Knowledge will be gathered in this document about the features and possibilities 
+of Facebook. Contribution are welcome.
+
+The distributions and packages that interface with Facebook written in Perl are not supported by Facebook (organisation). Perl is 
+currently ignored by Facebook internal development, so we must collaborate as a community independent of a Facebook-provided 
+environment.
 
 =head1 FACEBOOK
 
@@ -29,28 +33,28 @@ L<Facebook documentation for Mobile Apps|http://developers.facebook.com/docs/gui
 
 =head1 FACEBOOK APIS
 
-Probably out of historical reasons, Facebook has several APIs to access their features. Some features are only available through
-specific APIs. The L</Old Rest API> still has features no other API can do, but will get outdated longtime, to get replaced by
+Potentially for historical reasons Facebook has several APIs to access their features. Some features are only available through
+specific APIs. The L</Old Rest API> still has features no other API can do, but will become outdated in the long term, it will be replaced by
 the L</Graph API>.
 
 =head2 Old Rest API
 
 =head3 L<WWW::Facebook::API>
 
-This module is not using the L<Facebook> package, its an independent development, but we use it in L<Facebook> as standard
+This module is not using the L<Facebook> package, its an independent development, but we use it in L<Facebook> as a standard
 Old Rest API reflection.
 
 =head2 Graph API
 
 =head3 L<Facebook::Graph>
 
-This distribution is not using the L<Facebook> package, its an independent development, but we use it in L<Facebook> as standard
+This distribution does not use the L<Facebook> package, its an independent development, but we use it in L<Facebook> as a standard
 Graph API reflection.
 
 =head3 L<Net::Facebook::Oauth2>
 
-This package is used for making an authentification call over the L</Graph API>. This way you can get the required access tokens
-to make directly HTTP requests to the L</Graph API>.
+This package is used for making an authentication call over the L</Graph API>. By this method you get the required access tokens
+to make direct HTTP requests to the L</Graph API>.
 
 =head2 Social Plugins
 
@@ -75,7 +79,7 @@ L<Facebook documentation about FBML|http://developers.facebook.com/docs/referenc
 =head3 L<WWW::Facebook::API::FBML>
 
 L<WWW::Facebook::API::FBML> is part of the L<WWW::Facebook::API> distribution and uses this to access FBML methods. This
-means, that every call of those methods actually triggers an API request to Facebook.
+means that every call of those methods actually triggers an API request to Facebook.
 
 =head2 Internationalization
 
@@ -95,25 +99,25 @@ L<Facebook documentation about Ads API|http://developers.facebook.com/docs/adsap
 
 =head3 L<Catalyst::Model::Facebook>
 
-With L<Catalyst::Model::Facebook> you got the most easy integration of the L<Facebook> package into your L<Catalyst> application.
-It automatically parses the cookie properly so that you actually just need to give app_id and secret and you will be ready to go
+With L<Catalyst::Model::Facebook> we have the easiest integration of the L<Facebook> package into a L<Catalyst> application.
+It automatically parses the cookie properly so that we just need to provide app_id and secret and it will be ready to go
 for accessing the Facebook L</Graph API> and Facebook L</Old Rest API>. Please see the documentation of this module and the
-documentation of the L<Facebook> package for further informations.
+documentation of the L<Facebook> package for further information.
 
 =head3 L<Catalyst::Plugin::Facebook>
 
-This distribution only gives you a small adaptor for L<WWW::Facebook::API>, which is integrated over $c->fb, its not flexible cause
-you cant be several apps at once in this way, also it doesnt help about parsing the cookie or any other possible integration
-into L<Catalyst>. You should use L<Catalyst::Model::Facebook> instead.
+This distribution only gives a small adaptor for L<WWW::Facebook::API> that is integrated over $c->fb. It is not flexible because
+you cannot have several simultaneous applications in this manner. It does not help parsing a cookie or any other potential integration
+into L<Catalyst>. Use L<Catalyst::Model::Facebook> instead.
 
 =head3 L<Catalyst::Authentication::Credential::Facebook>
 
-This module can be used to directly plugin Facebook to the L<Catalyst::Plugin::Authentication> system. The package is using 
-L<WWW::Facebook::API> for this.
+This module can be used to directly plug in Facebook to the L<Catalyst::Plugin::Authentication> system. The package uses 
+L<WWW::Facebook::API>.
 
 =head3 L<CatalystX::FacebookURI>
 
-Automatically compose uri_for URIs to be within your Facebook application.
+Automatically compose uri_for URIs in your Facebook application.
 
 =head2 L<WebGUI|Task::WebGUI>
 
@@ -122,27 +126,29 @@ Automatically compose uri_for URIs to be within your Facebook application.
 Facebook Publisher is the skeleton of a system to cross publish content from a WebGUI site onto Facebook pages. An example 
 workflow activity is given that publishes a title, link, and synopsis to Facebook every time a new thread is started in a 
 Collaboration System. However, this could also be directly integrated into assets, command line utilities, or into other 
-workflow activities. It could be made to publish photos, calendar entries, or really anything to Facebook.
+workflow activities. It could be made to publish photos, calendar entries, or anything, really, to Facebook.
+
+This module does not use the L<Facebook> package it is an independent development.
 
 =head2 L<Mojolicious>
 
 =head3 L<Mojolicious::Plugin::ShareHelpers>
 
-Mojolicious Plugin for generate share url, button and meta (Twitter, Facebook, Buzz, VKontakte, MyMailRU). So in general it
-just reflects the L</Social Plugins> of Facebook and makes it more easy to use those. No other API is required for this.
+Mojolicious plugin to generate share url, button and meta (Twitter, Facebook, Buzz, VKontakte, MyMailRU). Generally it
+just reflects the L</Social Plugins> of Facebook and makes those easier to use. No other API is required.
 
 =head2 L<Jifty>
 
 =head3 L<Jifty::Plugin::Authentication::Facebook>
 
 Provides standalone Facebook authentication for your L<Jifty> application. It adds the columns facebook_name, facebook_uid,
-facebook_session, and facebook_session_expires to your User model. The package is using L<WWW::Facebook::API> for this.
+facebook_session, and facebook_session_expires to your User model. The package uses L<WWW::Facebook::API>.
 
 =head2 L<Net::Social>
 
 =head3 L<Net::Social::Service::Facebook>
 
-This is the plugin for using Facebook inside of L<Net::Social>. The package is using L<WWW::Facebook::API> for this.
+This is the plugin for using Facebook inside of L<Net::Social>. The package uses L<WWW::Facebook::API>.
 
 =head1 MARKETING
 
@@ -177,6 +183,6 @@ listed on L<Facebook> and all other packages in this distribution.
 =head1 LICENSE
 
 This documentation is free software and may be distributed under the same terms
-as perl itself.
+as Perl itself.
 
 =cut
