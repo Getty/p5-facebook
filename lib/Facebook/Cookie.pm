@@ -1,4 +1,5 @@
 package Facebook::Cookie;
+# ABSTRACT: Analyzed and signed Facebook Cookie reflection
 
 use Moose;
 use Digest::MD5 qw/md5_hex/;
@@ -6,10 +7,6 @@ use Carp qw/croak/;
 use namespace::autoclean;
 
 =encoding utf8
-
-=head1 NAME
-
-Facebook::Cookie - Analyzed and signed Facebook Cookie reflection
 
 =head1 SYNOPSIS
  
@@ -30,13 +27,13 @@ Facebook::Cookie - Analyzed and signed Facebook Cookie reflection
 
 =head1 DESCRIPTION
 
+If you have any suggestion how we can use this package namespace, please suggest to authors listed in the end of this document.
+
 =head1 ATTRIBUTES
 
-=head2 cookie
+=method cookie
 
-=over 4
-
-=item Is a: String
+Is a: String
 
 This cookie is used for checking the data, if its not there you must give catalyst_request and app_id, so that it can
 be taken from there.
@@ -54,11 +51,9 @@ has cookie => (
 	},
 );
 
-=head2 catalyst_request
+=method catalyst_request
 
-=over 4
-
-=item Is a: Catalyst::Request
+Is a: Catalyst::Request
 
 If there is no cookie given, this is used in combination with app_id
 
@@ -71,11 +66,9 @@ has catalyst_request => (
 	default => sub { croak "catalyst_request required" },
 );
 
-=head2 secret
+=method secret
 
-=over 4
-
-=item Is a: String
+Is a: String
 
 This is the secret for your application, its required for nearly all features of this framework.
 
@@ -88,11 +81,9 @@ has secret => (
 	default => sub { croak "secret required" },
 );
 
-=head2 app_id
+=method app_id
 
-=over 4
-
-=item Is a: String
+Is a: String
 
 This is the application id, also required for nearly all features of this framework.
 
@@ -117,13 +108,11 @@ has _signed_values => (
 
 =head1 METHODS
 
-=head2 Facebook::Cookie::check_payload
+=method Facebook::Cookie::check_payload
 
-=over 4
+Arguments: $cookie, $app_secret
 
-=item Arguments: $cookie, $app_secret
-
-=item Return value: HashRef
+Return value: HashRef
 
 Checks the signature of the given cookie (as text) with the given application secret and gives back the checked HashRef or 
 an empty one.
@@ -153,13 +142,11 @@ sub check_payload {
 	return {};
 }
 
-=head2 $obj->uid
+=method $obj->uid
 
-=over 4
+Arguments: None
 
-=item Arguments: None
-
-=item Return value: Integer
+Return value: Integer
 
 Gives back the signed uid of the cookie given
 
@@ -170,13 +157,11 @@ sub uid {
 	return $self->_signed_values->{uid};
 }
 
-=head2 $obj->access_token
+=method $obj->access_token
 
-=over 4
+Arguments: None
 
-=item Arguments: None
-
-=item Return value: String
+Return value: String
 
 Gives back the signed access_token of the cookie given
 
@@ -187,13 +172,11 @@ sub access_token {
 	return $self->_signed_values->{access_token};
 }
 
-=head2 $obj->session_key
+=method $obj->session_key
 
-=over 4
+Arguments: None
 
-=item Arguments: None
-
-=item Return value: String
+Return value: String
 
 Gives back the signed session_key of the cookie given
 
@@ -204,13 +187,11 @@ sub session_key {
 	return $self->_signed_values->{session_key};
 }
 
-=head2 $obj->expires
+=method $obj->expires
 
-=over 4
+Arguments: None
 
-=item Arguments: None
-
-=item Return value: Integer
+Return value: Integer
 
 Gives back the signed expire date as timestamp of the cookie given
 
@@ -221,13 +202,11 @@ sub expires {
 	return $self->_signed_values->{expires};
 }
 
-=head2 $obj->base_domain
+=method $obj->base_domain
 
-=over 4
+Arguments: None
 
-=item Arguments: None
-
-=item Return value: String
+Return value: String
 
 Gives back the signed base_domain of the cookie given
 
@@ -237,44 +216,5 @@ sub base_domain {
 	my ( $self ) = @_;
 	return $self->_signed_values->{base_domain};
 }
-
-=back
-
-=head1 LIMITATIONS
-
-=head1 TROUBLESHOOTING
-
-=head1 SUPPORT
-
-IRC
-
-  Join #facebook on irc.perl.org.
-
-Repository
-
-  http://github.com/Getty/p5-facebook
-  Pull request and additional contributors are welcome
- 
-Issue Tracker
-
-  http://github.com/Getty/p5-facebook/issues
-
-=head1 AUTHOR
-
-Torsten Raudssus <torsten@raudssus.de> L<http://www.raudssus.de/>
-
-=head1 CONTRIBUTORS
-
-=head1 COPYRIGHT
-
-Copyright (c) 2010 the Facebook L</AUTHOR> and L</CONTRIBUTORS> as
-listed on L<Facebook> and all other packages in this distribution.
-
-=head1 LICENSE
-
-This library is free software and may be distributed under the same terms
-as perl itself.
-
-=cut
 
 1;

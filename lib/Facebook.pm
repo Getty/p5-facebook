@@ -1,18 +1,12 @@
 package Facebook;
+# ABSTRACT: The try for a Facebook SDK in Perl
 
 use Moose;
 use Carp qw/croak/;
 
 use namespace::autoclean;
 
-our $VERSION = '0.005';
-$VERSION = eval $VERSION;
-
 =encoding utf8
-
-=head1 NAME
-
-Facebook - The try for a Facebook SDK in Perl
 
 =head1 SYNOPSIS
 
@@ -137,19 +131,15 @@ has rest_api => (
 
 =head1 METHODS
 
-=head2 $obj->graph
+=method $obj->graph
 
-=over 4
+Arguments: None
 
-=item Arguments: None
-
-=item Return value: Object
+Return value: Object
 
 B<If you want to use this, you need to install L<Facebook::Graph>!>
 
 Returns an instance of the graph_class (by default this is L<Facebook::Graph>)
-
-=back
 
 =cut
 
@@ -158,19 +148,15 @@ sub graph {
 	$self->graph_api;
 }
 
-=head2 $obj->rest
+=method $obj->rest
 
-=over 4
+Arguments: None
 
-=item Arguments: None
-
-=item Return value: Object
+Return value: Object
 
 B<If you want to use this, you need to install L<WWW::Facebook::API>!>
 
 Returns an instance of the rest_class (by default this is L<WWW::Facebook::API>)
-
-=back
 
 =cut
 
@@ -182,37 +168,6 @@ sub rest {
 =head1 LIMITATIONS
 
 =head1 TROUBLESHOOTING
-
-=head1 SUPPORT
-
-IRC
-
-  Join #facebook on irc.perl.org.
-
-Repository
-
-  http://github.com/Getty/p5-facebook
-  Pull request and additional contributors are welcome
- 
-Issue Tracker
-
-  http://github.com/Getty/p5-facebook/issues
-
-=head1 AUTHOR
-
-Torsten Raudssus <torsten@raudssus.de> L<http://www.raudssus.de/>
-
-=head1 CONTRIBUTORS
-
-=head1 COPYRIGHT
-
-Copyright (c) 2010 the Facebook L</AUTHOR> and L</CONTRIBUTORS> as
-listed on L<Facebook> and all other packages in this distribution.
-
-=head1 LICENSE
-
-This library is free software and may be distributed under the same terms
-as perl itself.
 
 =cut
 

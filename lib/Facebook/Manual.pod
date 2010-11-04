@@ -1,12 +1,7 @@
-package Facebook::Manual;
-
-1;
+# PODNAME: Facebook::Manual
+# ABSTRACT: All you need to know about, and developing applications for, Facebook.
 
 =encoding utf8
-
-=head1 NAME
-
-Facebook::Manual - All you need to know about, and developing applications for, Facebook.
 
 =head1 DESCRIPTION
 
@@ -22,6 +17,24 @@ of Facebook. Contribution are welcome.
 The distributions and packages that interface with Facebook written in Perl are not supported by Facebook (organisation). Perl is 
 currently ignored by Facebook internal development, so we must collaborate as a community independent of a Facebook-provided 
 environment.
+
+=head1 THIS NAMESPACE
+
+=head2 L<Facebook::Manual>
+
+L<Facebook::Manual> will try to gather all informations you could need for developing Facebook applications and services.
+
+=head2 L<Facebook::Cookbook>
+
+L<Facebook::Cookbook> is a resource for example source code which is explained in detail.
+
+=head2 L<Facebook::App>
+
+L<Facebook::App> = Facebook Desktop Applications
+
+=head2 L<Facebook::Web>
+
+L<Facebook::Web> = Facebook Web Applications
 
 =head1 FACEBOOK
 
@@ -85,6 +98,10 @@ L<Facebook documentation about FBML|http://developers.facebook.com/docs/referenc
 L<WWW::Facebook::API::FBML> is part of the L<WWW::Facebook::API> distribution and uses this to access FBML methods. This
 means that every call of those methods actually triggers an API request to Facebook.
 
+=head2 Facebook JavaScript (FBJS)
+
+L<Facebook documentation about FBJS|http://developers.facebook.com/docs/fbjs>
+
 =head2 Internationalization
 
 L<Facebook documentation about Internationalization|http://developers.facebook.com/docs/internationalization>
@@ -121,7 +138,8 @@ L<WWW::Facebook::API>.
 
 =head3 L<CatalystX::FacebookURI>
 
-Automatically compose uri_for URIs in your Facebook application.
+Automatically compose uri_for URIs in your Facebook application. Its bound to be used in combination with L<Catalyst::Plugin::Facebook>
+and sadly cant be used in combination with the L<Facebook> distribution.
 
 =head2 L<WebGUI|Task::WebGUI>
 

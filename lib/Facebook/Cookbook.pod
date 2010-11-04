@@ -1,12 +1,7 @@
-package Facebook::Cookbook;
-
-1;
+# PODNAME: Facebook::Cookbook
+# ABSTRACT: How to cook your face.....book :)
 
 =encoding utf8
-
-=head1 NAME
-
-Facebook::Cookbook - How to cook your face.....book :)
 
 =head1 DESCRIPTION
 
