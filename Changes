@@ -2,6 +2,8 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
 
+0.007     2010-12-08 01:11:14 Europe/Berlin
+
 0.006     2010-11-04 22:46:51 Europe/Berlin
 	- switched to Dist::Zilla
 	- lots of stuff for Facebook::Manual
