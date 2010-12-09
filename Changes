@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.008     2010-12-09 16:13:12 Europe/Berlin
 	- Fixed requirements
 
 0.007     2010-12-08 01:11:14 Europe/Berlin
