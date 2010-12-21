@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+	- Fixed automatic include of API classes
 
 0.008     2010-12-09 16:13:12 Europe/Berlin
 	- Fixed requirements
