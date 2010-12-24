@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+	- Change of the API structure, cleanup
 
 0.009     2010-12-21 04:10:42 Europe/Berlin
 	- Fixed automatic include of API classes
