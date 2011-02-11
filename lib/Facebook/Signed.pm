@@ -87,13 +87,13 @@ has _signed_values => (
 		my ( $self ) = @_;
 
 		if ($self->canvas_param and $self->cookie_param) {
-			croak "You must use only one of canvas_param OR cookie_param";
+			croak "You must use one (and only one) of canvas_param OR cookie_param";
 		} elsif ($self->canvas_param) {
 			check_canvas_payload($self->canvas_param, $self->secret);
 		} elsif ($self->cookie_param) {
 			check_cookie_payload($self->cookie_param, $self->secret);
 		} else {
-			croak "You must use only one of canvas_param OR cookie_param";
+			croak "You must use one (and only one) of canvas_param OR cookie_param";
 		}
 	},
 );
@@ -188,7 +188,7 @@ Gives back the signed uid of the signed values given
 
 sub uid {
 	my ( $self ) = @_;
-	return $self->get('user_id');
+	return $self->get('uid') ? $self->get('uid') : $self->get('user_id');
 }
 
 =method $obj->access_token
