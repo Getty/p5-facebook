@@ -14,7 +14,14 @@ use namespace::autoclean;
 =head1 SYNOPSIS
 
   my $signed = Facebook::Signed->new(
-	facebook_data => $cookie_as_text,
+	cookie_param => $cookie_as_text,
+	secret => $secret,
+  );
+
+	OR
+
+  my $signed = Facebook::Signed->new(
+	canvas_param => $canvas_as_text,
 	secret => $secret,
   );
 
