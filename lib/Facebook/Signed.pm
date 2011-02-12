@@ -2,7 +2,10 @@ package Facebook::Signed;
 # ABSTRACT: Signed values given by Facebook to an application
 
 use Moose;
+use Digest::SHA qw/hmac_sha256/;
 use Digest::MD5 qw/md5_hex/;
+use MIME::Base64::URLSafe;
+use JSON;
 use Carp qw/croak/;
 use namespace::autoclean;
 
@@ -28,25 +31,44 @@ If you have any suggestion how we can use this package namespace, please suggest
 
 =head1 ATTRIBUTES
 
-=method facebook_data
+=method canvas_param
 
 Is a: String
 
-This data is used for getting the signed values. Its required on construction.
+This data is used for getting the signed values. Either this parameter or
+cookie_param (ONLY ONE) is required on construction.  
+
 
 =cut
 
-has facebook_data => (
+has canvas_param => (
 	isa => 'Str',
 	is => 'ro',
-	required => 1,
+	required => 0,
 );
+
+=method cookie_param
+
+Is a: String
+
+This data is used for getting the signed values. Either this parameter or
+canvas_param (ONLY ONE) is required on construction.  
+
+
+=cut
+
+has cookie_param => (
+	isa => 'Str',
+	is => 'ro',
+	required => 0,
+);
+
 
 =method secret
 
 Is a: String
 
-This is the secret for your application. Its required on construction.
+This is the secret for your application. It's required on construction.
 
 =cut
 
@@ -63,7 +85,16 @@ has _signed_values => (
 	lazy => 1,
 	default => sub {
 		my ( $self ) = @_;
-		check_payload($self->facebook_data, $self->secret);
+
+		if ($self->canvas_param and $self->cookie_param) {
+			croak "You must use one (and only one) of canvas_param OR cookie_param";
+		} elsif ($self->canvas_param) {
+			check_canvas_payload($self->canvas_param, $self->secret);
+		} elsif ($self->cookie_param) {
+			check_cookie_payload($self->cookie_param, $self->secret);
+		} else {
+			croak "You must use one (and only one) of canvas_param OR cookie_param";
+		}
 	},
 );
 
@@ -84,37 +115,64 @@ sub get {
 	return $self->_signed_values->{$key};
 }
 
-=method Facebook::Signed::check_payload
+=method Facebook::Signed::check_canvas_payload
 
 Arguments: $facebook_data, $app_secret
 
 Return value: HashRef
 
-Checks the signature of the given facebook data (from cookie or other ways) with the given application secret 
-and gives back the checked HashRef or an empty one.
+Checks the signature of the given facebook data from canvas with the given
+application secret and gives back the checked HashRef or an empty one.
 
 =cut
 
-sub check_payload {
+sub check_canvas_payload {
 	my ( $facebook_data, $app_secret ) = @_;
 
 	return {} if !$facebook_data;
+
+	my ($encoded_sig, $payload) = split('\.', $facebook_data);
+	my $sig  = urlsafe_b64decode($encoded_sig);
+	my $data = decode_json(urlsafe_b64decode($payload));
+	my $expected_sig = hmac_sha256($payload, $app_secret);
+
+	if ($sig eq $expected_sig) {
+		return $data;
+	}
+
+	return {};
+}
+
+=method Facebook::Signed::check_cookie_payload
+
+Arguments: $facebook_data, $app_secret
+
+Return value: HashRef
+
+Checks the signature of the given facebook data from a cookie with the
+given application secret and gives back the checked HashRef or an empty
+one.
+
+=cut
+
+sub check_cookie_payload {
+	my ( $facebook_data, $app_secret ) = @_;
 
 	my $hash;
 	my $payload;
 
 	map {
-		# TODO: test what happens if you have a = in the values
+# TODO: test what happens if you have a = in the values
 		my ($k,$v) = split '=', $_;
 		$hash->{$k} = $v;
 		$payload .= $k .'='. $v if $k ne 'sig';
 	} split('&',$facebook_data);
-	
+
 	if (md5_hex($payload.$app_secret) eq $hash->{sig}) {
-		# TODO: fix html encoding?
+# TODO: fix html encoding?
 		return $hash;
 	}
-	
+
 	return {};
 }
 
@@ -130,7 +188,7 @@ Gives back the signed uid of the signed values given
 
 sub uid {
 	my ( $self ) = @_;
-	return $self->get('uid');
+	return $self->get('uid') ? $self->get('uid') : $self->get('user_id');
 }
 
 =method $obj->access_token
