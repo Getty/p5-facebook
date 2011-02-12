@@ -1,5 +1,5 @@
 package Facebook;
-# ABSTRACT: The try for a Facebook SDK in Perl
+# ABSTRACT: Facebook SDK in Perl
 
 use Moose;
 use Carp qw/croak/;
