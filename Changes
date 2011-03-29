@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.102     2011-03-29 14:48:06 America/Chicago
 	- Fix for creating Signed object with no cookie or signed_data
 
 0.101     2011-02-12 13:37:15 America/Chicago
