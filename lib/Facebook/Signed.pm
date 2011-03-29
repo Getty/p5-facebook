@@ -25,6 +25,12 @@ use namespace::autoclean;
 	secret => $secret,
   );
 
+	OR
+
+  my $signed = Facebook::Signed->new(
+	secret => $secret,
+  );
+
   my $custom_value = $signed->get('custom_key');
 
   # shortcuts, return undef if not existing
@@ -100,7 +106,7 @@ has _signed_values => (
 		} elsif ($self->cookie_param) {
 			check_cookie_payload($self->cookie_param, $self->secret);
 		} else {
-			croak "You must use one (and only one) of canvas_param OR cookie_param";
+			return {};
 		}
 	},
 );

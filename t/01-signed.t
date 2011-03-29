@@ -26,6 +26,10 @@ BEGIN {
 	is($fb_canvas->uid, '100001153174797', 'Facebook::Signed gave proper uid for canvas');
 	is($fb_canvas->get('oauth_token'), '150945154962687|2.2qXg9yxUJrHoWwgfNbfx5g__.3600.1297386000-650287670|yMhgzsJV5TynlqNDb6BDHSeYDyU', 'Facebook::Signed gave proper oauth_token for canvas');
 
+	my $fb = Facebook::Signed->new(
+		secret => '7adde7e516bf42ec914b08c8d075c13d',
+	);
+	isa_ok($fb, 'Facebook::Signed');
 }
 
 done_testing;
